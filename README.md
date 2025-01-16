@@ -1,3 +1,18 @@
+# 3D Gaussian Splat Converter
+A simple command line executable based on spz project. This can convert between ply and spz.
+```bash
+splat_converter.exe <ply_file>
+# Or
+splat_converter.exe <spz_file>
+```
+This will output the converted file in the same folder. A pre-built executable is provided.
+
+In addition, you can also build a DLL as Unity native plugin to use together with other Gaussian Splatting Unity projects like [Gaussian Splatting VR Viewer](https://github.com/clarte53/GaussianSplattingVRViewerUnity) or [Gaussian Splatting playground in Unity](https://github.com/aras-p/UnityGaussianSplatting).
+
+
+Below are the original Readme.
+
+
 # spz
 
 `.spz` is a file format for compresed 3D gaussian splats. This directory contains a C++ library
