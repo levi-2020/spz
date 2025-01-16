@@ -1,11 +1,15 @@
 #pragma once
 
+
+#include <algorithm>
 #include <array>
 #include <cmath>
 #include <cstring>
 #include <cstdint>
 #include <vector>
 #include "splat-c-types.h"
+
+#define M_PI       3.14159265358979323846 
 
 namespace spz {
 
@@ -167,7 +171,7 @@ constexpr Vec3f times(const Quat4f &q, const Vec3f &p) {
     vx * (xz2 - wy2) + vy * (yz2 + wx2) + vz * (1.0f - (xx2 + yy2))};
 }
 
-constexpr Quat4f times(const Quat4f &a, const Quat4f &b) {
+inline Quat4f times(const Quat4f &a, const Quat4f &b) {
   auto [w, x, y, z] = a;
   auto [qw, qx, qy, qz] = b;
   return normalized(std::array<float, 4>{
