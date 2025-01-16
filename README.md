@@ -9,6 +9,21 @@ This will output the converted file in the same folder. A pre-built executable i
 
 In addition, you can also build a DLL as Unity native plugin to use together with other Gaussian Splatting Unity projects like [Gaussian Splatting VR Viewer](https://github.com/clarte53/GaussianSplattingVRViewerUnity) or [Gaussian Splatting playground in Unity](https://github.com/aras-p/UnityGaussianSplatting).
 
+For example:
+```
+// Import the function from the DLL
+ [DllImport("spz_converter", CallingConvention = CallingConvention.Cdecl)]
+ private static extern bool ConvertSpzToPly(string spzPath, string plyPath);
+
+ public void ConvertFile(string spzPath, string plyPath)
+ {
+     bool success = ConvertSpzToPly(spzPath, plyPath);
+     if (success)
+         Debug.Log($"Successfully converted {spzPath} to {plyPath}");
+     else
+         Debug.LogError("Conversion failed.");
+ }
+```
 
 Below are the original Readme.
 
